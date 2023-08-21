@@ -36,6 +36,7 @@ sudo make install
 ## Goals:
 - [x] Simple parser that allows for copying pasting build instructions.
 - [x] Specify a build list using CLI arguments.
+- [ ] Ask to continue if a build fails.
 - [ ] Having a default config file in `$XDG_CONFIG_HOME`.
 - [ ] Automatic git pull (don't build when no changes are pulled).
 - [ ] Being able to set variables in config, ie:
