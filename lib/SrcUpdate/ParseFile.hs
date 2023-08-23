@@ -15,12 +15,12 @@ data BuildInstructions = BuildInstructions
 
 parseFile :: [String] -> [Maybe BuildInstructions]
 parseFile contents =
-  let tail' = drop 1
-   in case (second tail' . span (/= "")) contents of
-        (match, []) ->
-          [parseSection match]
-        (firstMatch, remaining) ->
-          parseSection firstMatch : parseFile remaining
+  case span (/= "") contents of
+    (match, []) ->
+      [parseSection match]
+    (firstMatch, remaining) ->
+      parseSection firstMatch
+        : parseFile (dropWhile (== "") remaining)
 
 parseSection :: [String] -> Maybe BuildInstructions
 parseSection s =
