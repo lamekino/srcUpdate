@@ -16,7 +16,6 @@ The grammar for the config can be defined as:
 <...>
 <EOF>
 ```
-Note that currently the new line between build paths is enforced.
 
 ## Example:
 ```
